@@ -33,7 +33,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:update": "jest -u"
+    "test:update": "jest -u",
+    "test:coverage": "jest --coverage"
   },
   "browserslist": [
     "last 2 Chrome versions",
