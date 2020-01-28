@@ -2,7 +2,7 @@ import React from "react";
 import Calculator from "../Calculator";
 import { render, fireEvent } from "@testing-library/react";
 
-test("should CalculatorKey handle click properly", () => {
+test("should Calculator multiply correctly", () => {
   const { getByText, getByTestId, container } = render(<Calculator />);
 
   const button2 = getByText("2");
