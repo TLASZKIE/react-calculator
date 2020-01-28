@@ -24,13 +24,8 @@
   "scripts": {
     "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel src/index.html",
-    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "jest",
-    "test:update": "jest -u",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "browserslist": [
     "last 2 Chrome versions",
