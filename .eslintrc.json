@@ -11,7 +11,7 @@
   "rules": {
     "react/prop-types": 0
   },
-  "plugins": ["react", "import", "jsx-a11y"],
+  "plugins": ["react", "import", "jsx-a11y", "html"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -22,7 +22,8 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "settings": {
     "react": {

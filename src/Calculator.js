@@ -1,6 +1,7 @@
 import React from "react";
 import CalculatorDisplay from "./CalculatorDisplay";
 import CalculatorKey from "./CalculatorKey";
+import { nthPrime } from "./primesFactory";
 
 const CalculatorOperations = {
   "/": (prevValue, nextValue) => prevValue / nextValue,
@@ -50,17 +51,16 @@ class Calculator extends React.Component {
     });
   }
 
-  inputPercent() {
+  inputPrime() {
     const { displayValue } = this.state;
-    const currentValue = parseFloat(displayValue);
+    const currentValue = parseInt(displayValue);
 
-    if (currentValue === 0) return;
+    if (currentValue <= 0) return;
 
-    const fixedDigits = displayValue.replace(/^-?\d*\.?/, "");
-    const newValue = parseFloat(displayValue) / 100;
+    const newValue = nthPrime(currentValue);
 
     this.setState({
-      displayValue: String(newValue.toFixed(fixedDigits.length + 2))
+      displayValue: String(newValue)
     });
   }
 
@@ -162,7 +162,7 @@ class Calculator extends React.Component {
 
     return (
       <div className="calculator">
-        <CalculatorDisplay value={displayValue} />
+        <CalculatorDisplay value={displayValue} data-testid="display" />
         <div className="calculator-keypad">
           <div className="input-keys">
             <div className="function-keys">
@@ -182,9 +182,9 @@ class Calculator extends React.Component {
               </CalculatorKey>
               <CalculatorKey
                 className="key-percent"
-                onPress={() => this.inputPercent()}
+                onPress={() => this.inputPrime()}
               >
-                %
+                Prime
               </CalculatorKey>
             </div>
             <div className="digit-keys">
