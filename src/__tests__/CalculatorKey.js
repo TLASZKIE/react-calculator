@@ -1,6 +1,6 @@
 import React from "react";
 import CalculatorKey from "../CalculatorKey";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 test("should CalculatorKey handle click properly", () => {
   const clickFn = jest.fn();

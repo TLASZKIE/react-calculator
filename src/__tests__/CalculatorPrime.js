@@ -1,3 +1,4 @@
+/* eslint-disable import/namespace */
 import React from "react";
 import Calculator from "../Calculator";
 import { render, fireEvent } from "@testing-library/react";
