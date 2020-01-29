@@ -6,7 +6,7 @@ import * as primesMock from "../primesFactory";
 
 jest.mock("../primesFactory");
 
-primesMock.nthPrime = jest.fn(() => 3);
+//primesMock.nthPrime = jest.fn(() => 3);
 
 test("should Calculator get prime correctly", () => {
   const { getByText, getByTestId } = render(<Calculator />);
