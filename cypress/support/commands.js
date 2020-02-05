@@ -29,3 +29,7 @@ import "@testing-library/cypress/add-commands";
 Cypress.Commands.add("getDisplay", () => {
   return cy.queryByTestId("display");
 });
+
+Cypress.Commands.add("displayShouldHaveText", expectedValue => {
+  return cy.getDisplay().should("have.text", expectedValue);
+});
