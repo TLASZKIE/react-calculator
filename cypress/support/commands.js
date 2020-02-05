@@ -25,3 +25,7 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 import "@testing-library/cypress/add-commands";
+
+Cypress.Commands.add("getDisplay", () => {
+  return cy.queryByTestId("display");
+});
