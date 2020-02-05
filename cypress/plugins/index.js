@@ -11,7 +11,26 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+const path = require("path");
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+  on("before:browser:launch", (browser, args) => {
+    console.log("launching browser %o", browser);
+
+    // only load React DevTools extension
+    // when opening Chrome in interactive mode
+    if (browser.family === "chrome") {
+      // we could also restrict the extension
+      // to only load when "browser.isHeaded" is true
+      const extensionFolder = path.resolve(
+        __dirname,
+        "..",
+        "./extensions/4.4.0_0"
+      );
+
+      console.log("adding React DevTools extension from", extensionFolder);
+      args.push(`--load-extension=${extensionFolder}`);
+
+      return args;
+    }
+  });
+};
