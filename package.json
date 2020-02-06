@@ -13,11 +13,14 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "@testing-library/cypress": "^5.2.1",
     "@testing-library/react": "^9.4.0",
     "@types/jest": "^25.1.0",
     "babel-eslint": "^10.0.3",
+    "cypress": "^3.8.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -34,7 +37,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:update": "jest -u",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "browserslist": [
     "last 2 Chrome versions",

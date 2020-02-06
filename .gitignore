@@ -6,3 +6,5 @@ dist/
 coverage/
 .vscode/
 yarn.lock
+cypress/videos
+cypress/screenshots
